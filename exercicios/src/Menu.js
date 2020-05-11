@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Simples from './componentes/Simples';
 import ParImpar from './componentes/ParImpar';
 import {Inverter, MegaSena} from './componentes/Multi';
+import Contador from './componentes/Contador'
 
 function HomeScreen({ navigation }) {
   return (
@@ -51,6 +52,12 @@ function InverterM({navigation}) {
   );
 }
 
+function ContadorM({navigation}) {
+  return(
+    <Contador numero={0} />
+  )
+}
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
@@ -63,6 +70,7 @@ export default function App() {
         <Drawer.Screen name="Inverter" component={InverterM} />
         <Drawer.Screen name="Par ou Impar" component={ParImparM} />
         <Drawer.Screen name="MegaSena" component={MegaSenaM} />
+        <Drawer.Screen name="Contador" component={ContadorM} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
