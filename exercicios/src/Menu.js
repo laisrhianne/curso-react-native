@@ -8,6 +8,7 @@ import ParImpar from './componentes/ParImpar';
 import {Inverter, MegaSena} from './componentes/Multi';
 import Contador from './componentes/Contador';
 import ValidarProps from './componentes/ValidarProps';
+import Evento from './componentes/Evento';
 
 function HomeScreen({navigation}) {
   return (
@@ -49,8 +50,10 @@ function ContadorM({navigation}) {
 }
 
 function ValidarPropsM({navigation}) {
-  return <ValidarProps ano={2020} />;
+  return <ValidarProps ano={20} />;
 }
+
+const EventoM = ({navigation}) => <Evento />;
 
 const Drawer = createDrawerNavigator();
 
@@ -66,6 +69,7 @@ export default function App() {
         <Drawer.Screen name="MegaSena" component={MegaSenaM} />
         <Drawer.Screen name="Contador" component={ContadorM} />
         <Drawer.Screen name="Validar Props" component={ValidarPropsM} />
+        <Drawer.Screen name="Evento" component={EventoM} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
