@@ -10,6 +10,7 @@ import Contador from './componentes/Contador';
 import ValidarProps from './componentes/ValidarProps';
 import Evento from './componentes/Evento';
 import Avo from './componentes/ComunicacaoDireta';
+import { TextoSincronizado } from './componentes/ComunicacaoIndireta';
 
 function HomeScreen({navigation}) {
   return (
@@ -30,35 +31,23 @@ function NotificationsScreen({navigation}) {
   );
 }
 
-function ParImparM({navigation}) {
-  return <ParImpar numero={30} />;
-}
+const ParImparM = ({navigation}) => <ParImpar numero={30} />;
 
-function MegaSenaM({navigation}) {
-  return <MegaSena numeros={6} />;
-}
+const MegaSenaM = ({navigation}) => <MegaSena numeros={6} />;
 
-function SimplesM({navigation}) {
-  return <Simples texto="Olá Mundo" />;
-}
+const SimplesM = ({navigation}) => <Simples texto="Olá Mundo" />;
 
-function InverterM({navigation}) {
-  return <Inverter texto="React Native" />;
-}
+const InverterM = ({navigation}) => <Inverter texto="React Native" />;
 
-function ContadorM({navigation}) {
-  return <Contador numero={0} />;
-}
+const ContadorM = ({navigation}) => <Contador numero={0} />;
 
-function ValidarPropsM({navigation}) {
-  return <ValidarProps ano={20} />;
-}
+const ValidarPropsM = ({navigation}) => <ValidarProps ano={20} />;
 
 const EventoM = ({navigation}) => <Evento />;
 
-function AvoM ({navigation}){
-  return <Avo nome='João' sobrenome='Rhianne' />;
-} 
+const AvoM = ({navigation}) => <Avo nome='João' sobrenome='Rhianne' />;
+
+const TextoSincronizadoM = ({navigation}) => <TextoSincronizado />
 
 const Drawer = createDrawerNavigator();
 
@@ -76,6 +65,7 @@ export default function App() {
         <Drawer.Screen name="Validar Props" component={ValidarPropsM} />
         <Drawer.Screen name="Evento" component={EventoM} />
         <Drawer.Screen name="Comunicação Direta" component={AvoM} />
+        <Drawer.Screen name="Comunicação Indireta" component={TextoSincronizadoM} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
