@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
-import {View, Text, TextInput} from 'react-native'
+import { View, Text, TextInput } from 'react-native'
 import Padrao from '../estilo/Padrao'
 
-export const Entrada = props => {
+export const Entrada = props => 
     <View>
         <TextInput value={props.texto}
-        style={Padrao.input}
-        onChangeText={props.chamarQuandoMudar} />
+            style={Padrao.input}
+            onChangeText={props.chamarQuandoMudar} />
     </View>
-}
 
-export class TextoSincronizado extends Component {
+export default class TextoSincronizado extends Component {
+
     state = {
         texto: ''
     }
 
     alterarTexto = texto => {
-        this.setState({texto})
+        this.setState({ texto })
     }
 
     render() {
