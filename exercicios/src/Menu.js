@@ -11,6 +11,8 @@ import ValidarProps from './componentes/ValidarProps';
 import Evento from './componentes/Evento';
 import Avo from './componentes/ComunicacaoDireta';
 import { TextoSincronizado } from './componentes/ComunicacaoIndireta';
+import ListaFlex from './componentes/ListaFlex';
+import Flex from './componentes/Flex';
 
 function HomeScreen({navigation}) {
   return (
@@ -47,7 +49,11 @@ const EventoM = ({navigation}) => <Evento />;
 
 const AvoM = ({navigation}) => <Avo nome='João' sobrenome='Rhianne' />;
 
-const TextoSincronizadoM = ({navigation}) => <TextoSincronizado />
+const TextoSincronizadoM = ({navigation}) => <TextoSincronizado />;
+
+const ListaFlexM = ({navigation}) => <ListaFlex />;
+
+const FlexM = ({navigation}) => <Flex />;
 
 const Drawer = createDrawerNavigator();
 
@@ -66,6 +72,8 @@ export default function App() {
         <Drawer.Screen name="Evento" component={EventoM} />
         <Drawer.Screen name="Comunicação Direta" component={AvoM} />
         <Drawer.Screen name="Comunicação Indireta" component={TextoSincronizadoM} />
+        <Drawer.Screen name="Lista Flex" component={ListaFlexM} />
+        <Drawer.Screen name="Flex Box" component={FlexM} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
